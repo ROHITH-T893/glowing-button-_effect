@@ -1,0 +1,167 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+html{
+    font-size: 65.5%;
+}
+.con{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    background-color: rgb(6, 3, 22);
+}
+
+@keyframes rot{
+    0%{
+        transform: rotateZ(0);
+    }
+    
+    25%{
+        transform: rotateZ(55deg);
+    }
+    
+    50%{
+        transform: rotateZ(0);
+    }
+   
+   
+    75%{
+        transform: rotateZ(-55deg);
+    }
+    
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+
+.btn{
+    width: 45rem;
+    height: 12rem;
+    background: none;
+    border: 0.6rem solid rgb(255, 89, 0);
+    border-radius: 2rem;
+    color: rgb(255, 42, 0);
+    font-size: 7rem;
+    letter-spacing: 2.5rem;
+    box-shadow: inset 0 0 3rem red;
+    padding-left: 4rem;
+    cursor: pointer;
+    padding-right: 2rem;
+    position: relative;
+    perspective: 6rem;
+    animation: anim 2s linear infinite;
+    transition: all 0.3x;
+}
+.btn:hover{
+    background: red;
+    color: black;
+    animation: none;
+}
+.btn:hover span{
+    animation: none;
+}
+@keyframes anim{
+    0%{
+opacity: 0.1;
+    }
+    2%{
+        opacity: 1;
+    }
+    4%{
+opacity: 0.1;
+    }
+    8%{
+        opacity: 1;
+    }
+    70%{
+        opacity: .7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.btn::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 6rem red;
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+.btn:hover::before{
+    box-shadow: 0 0 15rem red;
+    transition: all 1s;
+}
+.btn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height:100%;
+    background: rgb(255, 38, 0);
+    opacity: .7;
+    transform: translate(-50%,130%) rotateX(45deg) scale(1,0.35);
+    filter: blur(3rem);
+    pointer-events: none;
+}
+.btn:hover::after{
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%,110%) rotateX(45deg) scale(1,0.35);
+    filter: blur(5rem);
+    transition: all 0.3s;
+}
+span{
+    text-shadow: 0 0 1rem red , 0 0 1rem red;
+    animation:  text 3s linear infinite;
+}
+@keyframes text{
+    0%{
+        opacity: .1;
+    }
+    2%{
+        opacity: 1;
+    }
+    8%{
+        opacity: .1;
+    }
+    9%{
+        opacity: 1;
+    }
+    12%{
+        opacity: .1;
+    }
+    20%{
+        opacity: 1;
+    }
+    25%{
+        opacity: .3;
+    }
+    30%{
+        opacity: 1;
+    }
+    70%{
+        opacity: .7;
+    }
+    72%{
+        opacity: .2;
+    }
+    77%{
+        opacity: .7;
+    }
+    100%{
+        opacity: .9;
+
+    }
+}
